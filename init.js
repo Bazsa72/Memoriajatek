@@ -29,7 +29,7 @@ function init(){
                 //$("#" + (i + 1)).attr("src",file);
                 $("#" + (i + 1)).attr("src","Pictures/q.png");
                 $("#" + (i + 1)).removeClass("select");
-                $("#" + (i + 1)).off('click');
+                //$("#" + (i + 1)).off("click");
                 $("#" + (i + 1)).removeClass("bad");
                 $("#" + (i + 1)).removeClass("good");
                 next = true;
@@ -73,6 +73,8 @@ function compare(fir, sec) {
         setTimeout(function(){
         $("#" + fir).removeClass("bad");
         $("#" + sec).removeClass("bad");
+        $("#" + fir).on("click");
+        $("#" + sec).on("click");
         $("#" + fir).attr("src","Pictures/q.png");
         $("#" + sec).attr("src","Pictures/q.png");
         },3000);
@@ -93,16 +95,12 @@ $(function(){
         if(s1 == 0) {
             s1 = $(this).attr('id');
             $("#" + $(this).attr('id')).attr("src","Pictures/" + pos[$(this).attr('id') - 1] + ".png");
+            $("#" + $(this).attr('id')).off("click");
         } else {
-            if($(this).attr('id') == s1) {
-                s1 = 0;
-                $(this).removeClass("select");
-                $("#" + $(this).attr('id')).attr("src","Pictures/q.png");
-            } else {
                 s2 = $(this).attr('id');
+                $("#" + $(this).attr('id')).off("click");
                 $("#" + $(this).attr('id')).attr("src","Pictures/" + pos[$(this).attr('id') - 1] + ".png");
                 compare(s1,s2);
-            }
         }
     });
 });
