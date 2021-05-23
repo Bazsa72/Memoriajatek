@@ -29,7 +29,7 @@ function init(){
                 //$("#" + (i + 1)).attr("src",file);
                 $("#" + (i + 1)).attr("src","Pictures/q.png");
                 $("#" + (i + 1)).removeClass("select");
-                $("#" + (i + 1)).attr("disabled",true)
+                $("#" + (i + 1)).off('click');
                 $("#" + (i + 1)).removeClass("bad");
                 $("#" + (i + 1)).removeClass("good");
                 next = true;
