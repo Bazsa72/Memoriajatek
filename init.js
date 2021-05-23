@@ -56,7 +56,7 @@ function compare(fir, sec) {
                 init();
             }
             }
-            },1500);
+            },800);
         } else {
             $("#" + fir).removeClass("select");
             $("#" + sec).removeClass("select");
@@ -68,13 +68,13 @@ function compare(fir, sec) {
             $("#" + fir).addClass("bad");
             $("#" + sec).addClass("bad");
             $("#par").text(rep);
-        },1500);
+        },800);
         setTimeout(function(){
         $("#" + fir).removeClass("bad");
         $("#" + sec).removeClass("bad");
         $("#" + fir).attr("src","Pictures/q.png");
         $("#" + sec).attr("src","Pictures/q.png");
-        },3000);
+        },1600);
     }
     s1 = 0;
     s2 = 0;
