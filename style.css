@@ -39,3 +39,7 @@ h1{
 .bad{
     border: 0.125rem solid red;
 }
+
+body{
+    background-color: #6E1AF5;
+}
