@@ -74,7 +74,7 @@ function compare(fir, sec) {
         $("#" + sec).removeClass("bad");
         $("#" + fir).attr("src","Pictures/q.png");
         $("#" + sec).attr("src","Pictures/q.png");
-        },1000);
+        },100);
     }
     s1 = 0;
     s2 = 0;
