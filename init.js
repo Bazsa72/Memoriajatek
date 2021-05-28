@@ -38,27 +38,26 @@ function init(){
 }
 
 function compare(fir, sec) {
-    $("#blank").css('display',"block");
+    discl();
     if(pos[fir - 1] == pos[sec - 1]) {
         if(!find[fir - 1] && !find[sec - 1]) {
-        setTimeout(function(){
-            $("#" + fir).removeClass("select");
-            $("#" + sec).removeClass("select");
-            $("#" + fir).addClass("good");
-            $("#" + fir).disable('click');
-            $("#" + sec).disable('click');
-            $("#" + sec).addClass("good");
-            find[fir - 1] = true;
-            find[sec - 1] = true;
-            rep--;
-            $("#par").text(rep);
-            if (rep == 0){
-                //alert("Megtalálta az összes párt!\nSzép munka!");
-                var r = confirm("Megtalálta az összes párt!\nSzép munka!\n\nÚj játék kezdéséhez kattintson az \"OK\" gombra!");
-            if (r == true) {
-                init();
-            }
-            }
+            setTimeout(function(){
+                $("#" + fir).removeClass("select");
+                $("#" + sec).removeClass("select");
+                $("#" + fir).addClass("good");
+                $("#" + sec).addClass("good");
+                disable(fir,sec);
+                find[fir - 1] = true;
+                find[sec - 1] = true;
+                rep--;
+                $("#par").text(rep);
+                if (rep == 0){
+                    //alert("Megtalálta az összes párt!\nSzép munka!");
+                    var r = confirm("Megtalálta az összes párt!\nSzép munka!\n\nÚj játék kezdéséhez kattintson az \"OK\" gombra!");
+                    if (r == true) {
+                        init();
+                    }
+                }
             },500);
         } else {
             $("#" + fir).removeClass("select");
@@ -73,15 +72,31 @@ function compare(fir, sec) {
             $("#par").text(rep);
         },500);
         setTimeout(function(){
-        $("#" + fir).removeClass("bad");
-        $("#" + sec).removeClass("bad");
-        $("#" + fir).attr("src","Pictures/q.png");
-        $("#" + sec).attr("src","Pictures/q.png");
-        },100);
+            $("#" + fir).removeClass("bad");
+            //console.log("Remove" + fir);
+            $("#" + sec).removeClass("bad");
+            $("#" + fir).attr("src","Pictures/q.png");
+            $("#" + sec).attr("src","Pictures/q.png");
+        },700);
     }
     s1 = 0;
     s2 = 0;
-    $("#blank").css('display',"none");
+        setTimeout(() => {
+            encl();
+        }, 710);
+}
+
+function discl(){
+    $("#blank").css("display","block");
+}
+
+function encl(){
+    $("#blank").css("display","none");
+}
+
+function disable(fir,sec){
+    $("#" + fir).off('click');
+    $("#" + sec).off('click');
 }
 
 $(function(){
