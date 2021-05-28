@@ -7,6 +7,10 @@ div{
     text-align: center;
 }
 
+#blank{
+    display: none;
+}
+
 #main{
     margin-top: 0.9375rem;
     margin-left: auto;

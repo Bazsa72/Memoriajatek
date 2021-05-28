@@ -38,6 +38,7 @@ function init(){
 }
 
 function compare(fir, sec) {
+    $("#blank").css('display',"block");
     if(pos[fir - 1] == pos[sec - 1]) {
         if(!find[fir - 1] && !find[sec - 1]) {
         setTimeout(function(){
@@ -80,6 +81,7 @@ function compare(fir, sec) {
     }
     s1 = 0;
     s2 = 0;
+    $("#blank").css('display',"none");
 }
 
 $(function(){
