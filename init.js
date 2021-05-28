@@ -44,6 +44,8 @@ function compare(fir, sec) {
             $("#" + fir).removeClass("select");
             $("#" + sec).removeClass("select");
             $("#" + fir).addClass("good");
+            $("#" + fir).disable('click');
+            $("#" + sec).disable('click');
             $("#" + sec).addClass("good");
             find[fir - 1] = true;
             find[sec - 1] = true;
